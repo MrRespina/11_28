@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="fruits">
+	<select id="getAllFruits" resultType="com.ji.project001.Fruit">
+		SELECT * FROM nov28_fruit ORDER BY f_price
+	</select>
+	<insert id="insertFruits" parameterType="com.ji.project001.Fruit">
+		INSERT INTO nov28_fruit VALUES(#{f_name},#{f_price})
+	</insert>
+	<delete id="deleteFruits" parameterType="com.ji.project001.Fruit">
+		DELETE FROM nov28_fruit WHERE f_name = #{f_name}
+	</delete>
+</mapper>
